@@ -21,4 +21,25 @@ export class GituserServiceService {
     this.repo = new Repo ("","","","","",new Date(),new Date(),"")
 
    }
+
+   getUserData(username:string){
+
+    this.repoData.length = 0;
+
+
+    interface ApiResponse{
+      bio:string,
+      avatar_url:string,
+      created_at:Date,
+      updated_at:Date,
+      login:string,
+      public_repos:string,
+      html_url:string,
+      name:string,
+      full_name:string
+
+
+    }
+   }
+
 }
