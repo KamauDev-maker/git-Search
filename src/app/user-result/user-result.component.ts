@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { GituserServiceService } from '../gituser-service.service';
+import { NgForm } from '@angular/forms';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-result',
@@ -6,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-result.component.css']
 })
 export class UserResultComponent implements OnInit {
+  user:User;
+  repoDetails = [];
+  gituserServiceService:GituserServiceService;
+  hideInput:boolean;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(gituserServiceService:GituserServiceService) { 
+    this.gituserServiceService = gituserServiceService;
+
+  }
+  @Output() toggleBack = new EventEmitter();
+
+  goBack(){
+    this.hideInput = true
+    this.toggleBack.emit(this.hideInput);
+
+  }
+
+
+  ngOnInit(){
+    this.user = this.gituserServiceService.user;
+    this.repoDetails = this.gituserServiceService.repoData;   
   }
 
 }
