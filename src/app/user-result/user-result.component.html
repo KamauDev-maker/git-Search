@@ -20,10 +20,10 @@
         </div>
         <div class="panel-body repo-detail">                    
             <div class="git-results">                        
-                <div class="media mb15" *ngFor='let repoDetail of repoDetails'><!-- Loops Through Repository Instance Created from the APIResponse   -->
+                <div class="media mb15" *ngFor='let repoDetail of repoDetails'>
                     <div class="media-body">
                       <h4 class="filename text-success"><a href="{{repoDetail.html_url}}" target="_blank">{{repoDetail.name}}</a></h4>
-                      <small class="last-update">Created At: <strong>{{repoDetail.created_at|date}}</strong>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-clone" aria-hidden="true"></i>&nbsp;&nbsp;Clone:&nbsp;&nbsp;<strong appCloneHighlighter>{{repoDetail.clone_url}}</strong></small>
+                      <small class="last-update">Created At: <strong>{{repoDetail.created_at|date}}</strong>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-clone" aria-hidden="true"></i>&nbsp;&nbsp;Clone:&nbsp;&nbsp;<strong appHighlight>{{repoDetail.clone_url}}</strong></small>
                       <p class="description">{{repoDetail.description}}</p>
                       <small class="last-update">Language: <strong>{{repoDetail.language}}</strong>&nbsp;&nbsp;|&nbsp;&nbsp;Last Updated: <strong>{{repoDetail.updated_at|date}} Days Ago</strong></small>
                   </div>
