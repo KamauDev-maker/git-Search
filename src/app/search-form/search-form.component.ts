@@ -1,8 +1,6 @@
-import { Component, OnInit ,Output} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GituserServiceService } from '../gituser-service.service';
-import {HttpClient} from '@angular/common/http';
 import { User } from '../user';
-import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -20,8 +18,8 @@ export class SearchFormComponent implements OnInit {
 
   submitUsername(){
     this.gitUserServiceService.getUserData(this.username);
-    this.showInput = false;
-    this.showData = true;
+    this.showInput = true;
+    this.showData = false;
   }
 
   showUserInput(hideInput: any){
@@ -35,7 +33,7 @@ export class SearchFormComponent implements OnInit {
     this.gitUserServiceService = gitUserServiceService;
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }

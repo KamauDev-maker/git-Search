@@ -1,6 +1,5 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
 import { GituserServiceService } from '../gituser-service.service';
-import { NgForm } from '@angular/forms';
 import { User } from '../user';
 
 @Component({
@@ -19,7 +18,7 @@ export class UserResultComponent implements OnInit {
     this.gituserServiceService = gituserServiceService;
 
   }
-  @Output() toggleBack = new EventEmitter();
+  @Output () toggleBack = new EventEmitter();
 
   goBack(){
     this.hideInput = true
